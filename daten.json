@@ -1,0 +1,243 @@
+{
+  "daten": [
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E1",
+      "entgeltstufe": {
+        "stufe1": 0,
+        "stufe2": 1681.17,
+        "stufe3": 1710.23,
+        "stufe4": 1745.13,
+        "stufe5": 1780.04,
+        "stufe6": 1867.28
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E2",
+      "entgeltstufe": {
+        "stufe1": 1878.91,
+        "stufe2": 2070.84,
+        "stufe3": 2129.02,
+        "stufe4": 2187.17,
+        "stufe5": 2320.94,
+        "stufe6": 2460.54
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E3",
+      "entgeltstufe": {
+        "stufe1": 2030.13,
+        "stufe2": 2239.52,
+        "stufe3": 2297.68,
+        "stufe4": 2390.74,
+        "stufe5": 2466.35,
+        "stufe6": 2530.32
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E4",
+      "entgeltstufe": {
+        "stufe1": 2059.21,
+        "stufe2": 2274.43,
+        "stufe3": 2419.82,
+        "stufe4": 2501.25,
+        "stufe5": 2582.68,
+        "stufe6": 2635.01
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E5",
+      "entgeltstufe": {
+        "stufe1": 2163.90,
+        "stufe2": 2384.92,
+        "stufe3": 2501.25,
+        "stufe4": 2611.75,
+        "stufe5": 2699.00,
+        "stufe6": 2757.16
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E6",
+      "entgeltstufe": {
+        "stufe1": 2256.97,
+        "stufe2": 2489.61,
+        "stufe3": 2605.94,
+        "stufe4": 2722.27,
+        "stufe5": 2797.87,
+        "stufe6": 2879.29
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E7",
+      "entgeltstufe": {
+        "stufe1": 2297.68,
+        "stufe2": 2536.14,
+        "stufe3": 2693.18,
+        "stufe4": 2809.50,
+        "stufe5": 2902.58,
+        "stufe6": 2983.98
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E8",
+      "entgeltstufe": {
+        "stufe1": 2448.90,
+        "stufe2": 2704.82,
+        "stufe3": 2821.13,
+        "stufe4": 2931.65,
+        "stufe5": 3053.79,
+        "stufe6": 3129.40
+      },
+      "JSZ": 95
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E9",
+      "entgeltstufe": {
+        "stufe1": 2611.75,
+        "stufe2": 2885.11,
+        "stufe3": 3024.71,
+        "stufe4": 3410.25,
+        "stufe5": 3719.66,
+        "stufe6": 0
+      },
+      "JSZ": 80
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E10",
+      "entgeltstufe": {
+        "stufe1": 2943.29,
+        "stufe2": 3257.35,
+        "stufe3": 3499.50,
+        "stufe4": 3743.44,
+        "stufe5": 4207.56,
+        "stufe6": 0
+      },
+      "JSZ": 80
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E11",
+      "entgeltstufe": {
+        "stufe1": 3053.79,
+        "stufe2": 3374.56,
+        "stufe3": 3618.49,
+        "stufe4": 3987.39,
+        "stufe5": 4522.90,
+        "stufe6": 0
+      },
+      "JSZ": 80
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E12",
+      "entgeltstufe": {
+        "stufe1": 3158.48,
+        "stufe2": 3499.50,
+        "stufe3": 3987.39,
+        "stufe4": 4415.79,
+        "stufe5": 4969.13,
+        "stufe6": 0
+      },
+      "JSZ": 50
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E13",
+      "entgeltstufe": {
+        "stufe1": 3517.36,
+        "stufe2": 3904.10,
+        "stufe3": 4112.35,
+        "stufe4": 4516.94,
+        "stufe5": 5076.23,
+        "stufe6": 0
+      },
+      "JSZ": 50
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E14",
+      "entgeltstufe": {
+        "stufe1": 3814.86,
+        "stufe2": 4231.33,
+        "stufe3": 4475.29,
+        "stufe4": 4844.19,
+        "stufe5": 5409.43,
+        "stufe6": 0
+      },
+      "JSZ": 35
+    },
+    {
+      "jahr": 2016,
+      "entgeltgruppe": "E15",
+      "entgeltstufe": {
+        "stufe1": 4213.48,
+        "stufe2": 4671.64,
+        "stufe3": 4844.19,
+        "stufe4": 5457.04,
+        "stufe5": 5921.14,
+        "stufe6": 0
+      },
+      "JSZ": 35
+    }
+  ],
+  "tarifsteigerung": [
+      {
+          "text": "Nein",
+          "wert": 0
+      },
+      {
+          "text": "1,5 %",
+          "wert": 1.5
+      },
+      {
+          "text": "2 %",
+          "wert": 2
+      },
+      {
+          "text": "2,5 %",
+          "wert": 2.5
+      },
+      {
+          "text": "3 %",
+          "wert": 3
+      },
+      {
+          "text": "3,5 %",
+          "wert": 3.5
+      }
+  ],
+    "projekttraeger": [
+      {
+        "text": "Projektträger Eins",
+        "wert": "PT1"
+      },
+      {
+        "text": "Projektträger Zwei",
+        "wert": "PT2"
+      },
+      {
+        "text": "Projektträger Drei",
+        "wert": "PT3"
+      },
+      {
+        "text": "Projektträger Vier",
+        "wert": "PT4"
+      }
+    ]
+}

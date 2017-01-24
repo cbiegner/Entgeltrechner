@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Entgeltrechner TV-L">
+    <meta name="author" content="Christoph Biegner">
+
+    <title>Entgeltrechner TV-L</title>
+
+    <link rel="stylesheet" href="entgeltrechner.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="entgeltrechner.js" ></script>
+  </head>
+
+  <body>
+      <div id="eingabe">
+          <div class="inputlabel">Stellenbezeichnung</div>
+          <div class="inputfield"><input type="text" id="sb" required placeholder="Stellenbezeichnung" /></div>
+
+          <div class="inputlabel">Entgeltgruppe</div>
+          <div class="inputfield"><select id="eg"></select></div>
+
+          <div class="inputlabel">Stufe</div>
+          <div class="inputfield"><select id="st"></select></div>
+
+          <div class="inputlabel">Arbeitszeitanteil (in %)</div>
+          <div class="inputfield"><input type="text" id="aa" value="100" required /></div>
+
+          <div class="inputlabel">Tarifsteigerung</div>
+          <div class="inputfield"><select id="ts"></select></div>
+
+          <div class="inputlabel">Geplante Besch&auml;ftigungszeit</div>
+          <div class="inputfield"><input type="text" id="von" required placeholder="MM-JJJJ" /><input type="text" id="bis" required placeholder="MM-JJJJ" /></div>
+
+          <div class="inputbutton"><input type="button" value="Berechnen" id="go" onclick="calc();" /></div>
+      </div>
+      <div id="ausgabe">
+          <table class="table table-striped" id="ergeblistable">
+            <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Entgelt</th>
+                <th>Pauschal 30%</th>
+                <th>Grundvergütung</th>
+                <th>JSZ</th>
+                <th>Tarifsteigerung</th>
+                <th>Summe</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </div>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+        $(document).ready(function()
+        {
+            ready();
+        });
+      </script>
+  </body>
+</html>
