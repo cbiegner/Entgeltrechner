@@ -1,3 +1,5 @@
+var jsondata = "";
+
 function pt()
 {
     $.getJSON('daten.json', function(data)
@@ -108,18 +110,66 @@ function calc()
 {
     var eg = $('#eg').val();
     var st = $('#st').val();
+
+    var entgelt = 0; //eg * aa / 100;
+
+    $.getJSON('daten.json', function(data)
+    {
+        $.each( data.daten, function( key, val ) {
+            if(val.entgeltgruppe == eg)
+            {
+                jsz = val.JSZ;
+
+                switch (st)
+                {
+                    case "1":
+                        entgelt = val.entgeltstufe.stufe1;
+                        break;
+                    case "2":
+                        entgelt = val.entgeltstufe.stufe2;
+                        break;
+                    case "3":
+                        entgelt = val.entgeltstufe.stufe3;
+                        break;
+                    case "4":
+                        entgelt = val.entgeltstufe.stufe4;
+                        break;
+                    case "5":
+                        entgelt = val.entgeltstufe.stufe5;
+                        break;
+                    case "6":
+                        entgelt = val.entgeltstufe.stufe6;
+                        break;
+                }
+
+                if(entgelt > 0)
+                    calc_2(entgelt);
+            }
+        });
+    });
+}
+
+function calc_2(entgelt)
+{
+    var eg = $('#eg').val();
+    var st = $('#st').val();
     var aa = $('#aa').val();
     var ts = $('#ts').val();
+    var von = $('#von').val();
+    var bis = $('#bis').val();
 
-    var startdate = new Date(2017,0,1)
-    var enddate = new Date(2019,7,1)
+    entgelt = entgelt * aa / 100;
+
+    var startdate = new Date(von.substring(3, 7), von.substring(0, 2) - 1, 1);
+    var enddate = new Date(bis.substring(3, 7), bis.substring(0, 2) - 1, 1);
 
     var calcdate = startdate;
+
+    $('#ergebnistable > tbody > tr').remove();
 
     while(calcdate.getTime() <= enddate.getTime())
     {
         var monat = calcdate;
-        var entgelt = 12345.67; //eg * aa / 100;
         var pauschal = entgelt * 30 / 100;
         var grundvg = entgelt + pauschal;
         var jsz = grundvg * 95 / 100 / 12; // !!! TODO
@@ -139,7 +189,7 @@ function calc()
         var s_steigerung = '<td>' + steigerung.toFixed(2) + '</td>';
         var s_summe = '<td>' + summe.toFixed(2) + '</td>';
 
-        $('#ergeblistable > tbody:last-child').append('<tr>' + 
+        $('#ergebnistable > tbody:last-child').append('<tr>' + 
         s_monat + s_entgelt + s_pauschal + s_grundvg + s_jsz + s_steigerung + s_summe + '</tr>');
         calcdate.setMonth(calcdate.getMonth() + 1);
     }
