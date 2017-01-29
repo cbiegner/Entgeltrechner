@@ -189,10 +189,9 @@ function calc_2(entgelt, jsz)
         var s_steigerung = '<td align="center">' + steigerung.toFixed(2).replace(".", ",") + '</td>';
         var s_aufschlag = '<td align="center">' + aufschlag.toFixed(2).replace(".", ",") + '</td>';
         var s_grundvg = '<td align="center">' + grundvg.toFixed(2).replace(".", ",") + '</td>';
-        var s_summe = '<td align="center">' + summe.toFixed(2).replace(".", ",") + '</td>';
 
         $('#ergebnistable > tbody:last-child').append('<tr>' + 
-        s_monat + s_entgelt + s_pauschal + s_steigerung + s_aufschlag + s_grundvg + s_summe + '</tr>');
+        s_monat + s_entgelt + s_pauschal + s_steigerung + s_aufschlag + s_grundvg + '</tr>');
         calcdate.setMonth(calcdate.getMonth() + 1);
     }
 }
