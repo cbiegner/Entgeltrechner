@@ -1,5 +1,3 @@
-var jsondata = "";
-
 function pt()
 {
     $.getJSON('daten.json', function(data)
@@ -30,6 +28,9 @@ function st()
     {
         var selST = $('#st');
         var eg = $('#eg').val();
+
+        selST.empty();
+        selST.append($('<option></option>').val("").html("-- Entgeltstufe wählen --"));
 
         $.each( data.daten, function( key, val ) {
             if(val.entgeltgruppe == eg)
@@ -87,6 +88,8 @@ function ready()
     $("#von").datepicker();
     $("#bis").datepicker();
 
+    $('[data-toggle="tooltip"]').tooltip();
+
     eg();
     st();
     ts();
@@ -143,13 +146,13 @@ function calc()
                 }
 
                 if(entgelt > 0)
-                    calc_2(entgelt);
+                    calc_2(entgelt, jsz);
             }
         });
     });
 }
 
-function calc_2(entgelt)
+function calc_2(entgelt, jsz)
 {
     var eg = $('#eg').val();
     var st = $('#st').val();
@@ -172,25 +175,24 @@ function calc_2(entgelt)
         var monat = calcdate;
         var pauschal = entgelt * 30 / 100;
         var grundvg = entgelt + pauschal;
-        var jsz = grundvg * 95 / 100 / 12; // !!! TODO
-        var summevor = grundvg + jsz;
-        var steigerung = summevor * ts / 100;
-        var summe = summevor + steigerung;
+        var steigerung = grundvg * ts / 100;
+        var aufschlag = grundvg * jsz/ 100 / 12; // !!! TODO
+        var summe = grundvg + steigerung + aufschlag;
 
         var m = '0' + (calcdate.getMonth() + 1);
         if(m.length > 2)
             m = m.substring(1, 3);
         
-        var s_monat = '<td>' + m + '-' + calcdate.getFullYear() + '</td>';
-        var s_entgelt = '<td>' + entgelt.toFixed(2) + '</td>';
-        var s_pauschal = '<td>' + pauschal.toFixed(2) + '</td>';
-        var s_grundvg = '<td>' + grundvg.toFixed(2) + '</td>';
-        var s_jsz = '<td>' + jsz.toFixed(2) + '</td>';
-        var s_steigerung = '<td>' + steigerung.toFixed(2) + '</td>';
-        var s_summe = '<td>' + summe.toFixed(2) + '</td>';
+        var s_monat = '<td align="center">' + m + '-' + calcdate.getFullYear() + '</td>';
+        var s_entgelt = '<td align="center">' + entgelt.toFixed(2).replace(".", ",") + '</td>';
+        var s_pauschal = '<td align="center">' + pauschal.toFixed(2).replace(".", ",") + '</td>';
+        var s_steigerung = '<td align="center">' + steigerung.toFixed(2).replace(".", ",") + '</td>';
+        var s_aufschlag = '<td align="center">' + aufschlag.toFixed(2).replace(".", ",") + '</td>';
+        var s_grundvg = '<td align="center">' + grundvg.toFixed(2).replace(".", ",") + '</td>';
+        var s_summe = '<td align="center">' + summe.toFixed(2).replace(".", ",") + '</td>';
 
         $('#ergebnistable > tbody:last-child').append('<tr>' + 
-        s_monat + s_entgelt + s_pauschal + s_grundvg + s_jsz + s_steigerung + s_summe + '</tr>');
+        s_monat + s_entgelt + s_pauschal + s_steigerung + s_aufschlag + s_grundvg + s_summe + '</tr>');
         calcdate.setMonth(calcdate.getMonth() + 1);
     }
 }
