@@ -79,7 +79,7 @@ function ready()
         currentText: 'heute', currentStatus: '',
         todayText: 'heute', todayStatus: '',
         clearText: '-', clearStatus: '',
-        closeText: 'schließen', closeStatus: '',
+        closeText: 'OK', closeStatus: '',
         monthNames: ['Januar','Februar','März','April','Mai','Juni', 'Juli','August','September','Oktober','November','Dezember'],
         monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun', 'Jul','Aug','Sep','Okt','Nov','Dez'],
         dateFormat:'mm-yy'
@@ -176,22 +176,28 @@ function calc_2(entgelt, jsz)
         var pauschal = entgelt * 30 / 100;
         var grundvg = entgelt + pauschal;
         var steigerung = grundvg * ts / 100;
-        var aufschlag = grundvg * jsz/ 100 / 12; // !!! TODO
-        var summe = grundvg + steigerung + aufschlag;
+        var zwsumme = entgelt + pauschal + steigerung;
+        var gerundet = Math.round(zwsumme / 10) * 10;
+        var aufschlag = zwsumme * jsz/ 100 / 12;
+        var aufschlag_g = Math.round(aufschlag);
+        var summe = zwsumme + aufschlag;
 
         var m = '0' + (calcdate.getMonth() + 1);
         if(m.length > 2)
             m = m.substring(1, 3);
         
-        var s_monat = '<td align="center">' + m + '-' + calcdate.getFullYear() + '</td>';
+        var s_monat = '<td align="center"><b>' + m + '-' + calcdate.getFullYear() + '</b></td>';
         var s_entgelt = '<td align="center">' + entgelt.toFixed(2).replace(".", ",") + '</td>';
         var s_pauschal = '<td align="center">' + pauschal.toFixed(2).replace(".", ",") + '</td>';
         var s_steigerung = '<td align="center">' + steigerung.toFixed(2).replace(".", ",") + '</td>';
+        var s_zwsumme = '<td align="center">' + zwsumme.toFixed(2).replace(".", ",") + '</td>';
+        var s_gerundet = '<td align="center"><b>' + gerundet.toFixed(2).replace(".", ",") + '</b></td>';
         var s_aufschlag = '<td align="center">' + aufschlag.toFixed(2).replace(".", ",") + '</td>';
-        var s_grundvg = '<td align="center">' + grundvg.toFixed(2).replace(".", ",") + '</td>';
+        var s_aufschlag_g = '<td align="center"><b>' + aufschlag_g.toFixed(2).replace(".", ",") + '</b></td>';
+        var s_summe = '<td align="center">' + summe.toFixed(2).replace(".", ",") + '</td>';
 
         $('#ergebnistable > tbody:last-child').append('<tr>' + 
-        s_monat + s_entgelt + s_pauschal + s_steigerung + s_aufschlag + s_grundvg + '</tr>');
+        s_monat + s_entgelt + s_pauschal + s_steigerung + s_zwsumme + s_gerundet + s_aufschlag + s_aufschlag_g + s_summe + '</tr>');
         calcdate.setMonth(calcdate.getMonth() + 1);
     }
 }
